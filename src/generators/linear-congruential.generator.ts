@@ -10,7 +10,7 @@ export class LinearCongruentialGenerator {
         this.m = m
     }
 
-    nextRandom() {
+    nextRandom(): number {
         this.state = (this.a * this.state + this.c) % this.m
         return this.state / this.m
     }

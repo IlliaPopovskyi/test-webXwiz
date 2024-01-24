@@ -26,19 +26,24 @@ export const anonimyzingCustomer = (data: ICustomer): ICustomer => {
     }
 }
 
-function generateAnonimizedString(input: string, subnumber: number) {
-    const symbols =
+function generateAnonimizedString(input: string, subnumber: number): string {
+    const symbols: string =
         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-    const seed = new Date().getTime() * input.length * subnumber
-    const a = 1664525
-    const c = 1013904223
-    const m = Math.pow(2, 32)
+    const seed: number = new Date().getTime() * input.length * subnumber
+    const a: number = 1664525
+    const c: number = 1013904223
+    const m: number = Math.pow(2, 32)
 
-    const lcg = new LinearCongruentialGenerator(seed, a, c, m)
-    let str = ''
+    const lcg: LinearCongruentialGenerator = new LinearCongruentialGenerator(
+        seed,
+        a,
+        c,
+        m
+    )
+    let str: string = ''
 
     for (let i = 0; i < 8; i++) {
-        const index =
+        const index: number =
             Math.floor(lcg.nextRandom() * 1000000000000) % symbols.length
         str += symbols[index]
     }

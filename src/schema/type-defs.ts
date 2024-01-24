@@ -1,6 +1,7 @@
 import { gql } from 'apollo-server'
+import { DocumentNode } from 'graphql'
 
-const typeDefs = gql`
+const typeDefs: DocumentNode = gql`
     type Address {
         line1: String
         line2: String

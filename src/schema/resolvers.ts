@@ -1,5 +1,6 @@
 import db from '../models/db'
 import { EModels } from '../models/models.enum'
+
 const resolvers = {
     Query: {
         customers: async () => {

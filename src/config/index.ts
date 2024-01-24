@@ -1,4 +1,5 @@
 import { IConfig } from './interface'
+
 require('dotenv').config()
 
 export const config: IConfig = {

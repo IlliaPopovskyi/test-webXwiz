@@ -3,7 +3,7 @@ import { EModels } from './models.enum'
 import { anonimyzingCustomer } from '../generators/anonimiser-customer'
 import { ICustomer } from './customer.interface'
 
-export const customerListener = (db: Db) => {
+export const customerListener = (db: Db): void => {
     const customers = db.collection(EModels.CUSTOMERS)
     const changeStream = customers
         .watch([

@@ -1,4 +1,5 @@
 import { Db, MongoClient } from 'mongodb'
+
 import { config } from '../config'
 import { customerListener } from './customer-listener'
 
